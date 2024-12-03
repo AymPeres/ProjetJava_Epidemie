@@ -3,12 +3,14 @@ public class personne{
     private String etat ;
     private int facteurTransmission;
     private float dResistance;
+    private Placement placement;
 
     public personne(String nom, String etat, int facteurTransmission, float dResistance) {
         this.nom = nom;
         this.etat = etat;
         this.facteurTransmission = facteurTransmission;
         this.dResistance = dResistance;
+        
     }
 public String getNom() {
     return nom;
@@ -35,6 +37,9 @@ public void setdResistance(float dResistance) {
     this.dResistance = dResistance;
     }
 public void mourir(){
+
+}
+public double Deplacer(){
     
 }
    }
