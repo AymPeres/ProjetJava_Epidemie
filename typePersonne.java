@@ -1,3 +1,3 @@
-public enum typePersonne {
-    Sensibles, Neutres ,Résistants 
+public enum TypePersonne {
+    SENSIBLE, NEUTRE , RESISTANTE
 };

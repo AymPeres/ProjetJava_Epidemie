@@ -1,4 +1,4 @@
-public class Variant extends Virus  {
+public class Variant extends Maladie  {
     float tauxIncubation ;
 
     public Variant(String nom, float pIncubation, float tauxTransmissionInitial, float distanceMaxTransmission,
@@ -7,5 +7,6 @@ public class Variant extends Virus  {
         this.tauxIncubation = tauxIncubation;
     }
 
+    
     
 }
