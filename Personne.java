@@ -12,6 +12,9 @@ public class Personne {
         this.dResistance = dResistance;
     }
 
+    public getEtat(){
+        retuen etat;
+    }
 
 
     public void mourir() {
