@@ -1,9 +1,9 @@
 public class Epidemie {
     private Population populations;
-    private Virus virus;
-    public Epidemie(Population populations, Virus virus) {
+    private Maladie maladie;
+    public Epidemie(Population populations, Maladie maladie) {
         this.populations = populations;
-        this.virus = virus;
+        this.maladie = maladie;
     }
     public void afficher_historique(){
         

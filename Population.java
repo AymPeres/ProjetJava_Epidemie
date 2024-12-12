@@ -1,5 +1,5 @@
 public class Population {
-    private personne individus;
+    private Personne individus;
     private  int tauxMalade;
     
 }
