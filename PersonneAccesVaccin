@@ -1,0 +1,22 @@
+public class PersonneAccesVaccin extends Personne {
+    private int comptVaccin ;
+
+
+
+    public void vaccinationUneDose(){
+        facteurTransmission=population.getEpidemie().getMaladie().getListeFacteursTransmission().get(RESISTANTE);
+
+    }
+    
+    public void vaccinationDeuxDoses(){
+        if(comptVaccin==0){
+            comptVaccin++1;
+        }
+        else {
+            if(comptVaccin==1){
+                comptVaccin++1;
+                facteurTransmission=population.getEpidemie().getMaladie().getListeFacteursTransmission().get(RESISTANTE);
+            }
+        }
+    }
+}

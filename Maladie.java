@@ -1,21 +1,121 @@
+import java.util.EnumMap;
+import java.util.HashMap;
+
 public class Maladie {
     
     private String nom;
-    private float pIncubation ;
+    private int pIncubation ;
     private float tauxTransmissionInitial;
     private float distanceMaxTransmission ;
     private float pGuerison ;
     private float pDeces;
+    private float distanceMax;
+    private EnumMap<TypePersonne,Float> listeFacteursTransmission;
 
-    public Maladie(String nom, float pIncubation, float tauxTransmissionInitial, float distanceMaxTransmission,
-            float pGuerison, float pDeces) {
+ 
+
+    public Maladie(String nom, int pIncubation, float tauxTransmissionInitial, float distanceMaxTransmission,
+            float pGuerison, float pDeces, float distanceMax, float pneutre , float psensible , float presistante) {
         this.nom = nom;
         this.pIncubation = pIncubation;
         this.tauxTransmissionInitial = tauxTransmissionInitial;
         this.distanceMaxTransmission = distanceMaxTransmission;
         this.pGuerison = pGuerison;
         this.pDeces = pDeces;
+        this.distanceMax = distanceMax;
+        this.listeFacteursTransmission = new EnumMap<>(TypePersonne.class);
+        listeFacteursTransmission.put(TypePersonne.SENSIBLE, psensible);
+        listeFacteursTransmission.put(TypePersonne.NEUTRE , pneutre);
+        listeFacteursTransmission.put(TypePersonne.RESISTANTE, presistante);
+
+
     }
+
+
+
+    public String getNom() {
+        return nom;
+    }
+
+
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+
+
+    public int getpIncubation() {
+        return pIncubation;
+    }
+
+
+
+    public void setpIncubation(int pIncubation) {
+        this.pIncubation = pIncubation;
+    }
+
+
+
+    public float getTauxTransmissionInitial() {
+        return tauxTransmissionInitial;
+    }
+
+
+
+    public void setTauxTransmissionInitial(float tauxTransmissionInitial) {
+        this.tauxTransmissionInitial = tauxTransmissionInitial;
+    }
+
+
+
+    public float getDistanceMaxTransmission() {
+        return distanceMaxTransmission;
+    }
+
+
+
+    public void setDistanceMaxTransmission(float distanceMaxTransmission) {
+        this.distanceMaxTransmission = distanceMaxTransmission;
+    }
+
+
+
+    public float getpGuerison() {
+        return pGuerison;
+    }
+
+
+
+    public void setpGuerison(float pGuerison) {
+        this.pGuerison = pGuerison;
+    }
+
+
+
+    public float getpDeces() {
+        return pDeces;
+    }
+
+
+
+    public void setpDeces(float pDeces) {
+        this.pDeces = pDeces;
+    }
+
+
+
+    public float getDistanceMax() {
+        return distanceMax;
+    }
+
+
+
+    public void setDistanceMax(float distanceMax) {
+        this.distanceMax = distanceMax;
+    }
+
+
 
     private void propager(){
         

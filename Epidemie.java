@@ -1,12 +1,93 @@
+import java.util.*;
+
 public class Epidemie {
-    private Population populations;
+    private Population population;
     private Maladie maladie;
-    public Epidemie(Population populations, Maladie maladie) {
-        this.populations = populations;
+    private ArrayList<Cycle> cycles ;
+    
+
+  
+    public Epidemie(Population population, Maladie maladie, ArrayList<Cycle> cycles) {
+        this.population = population;
+        this.maladie = maladie;
+        this.cycles = cycles;
+    }
+
+    public Population getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(Population population) {
+        this.population = population;
+    }
+
+    public Maladie getMaladie() {
+        return maladie;
+    }
+
+    public void setMaladie(Maladie maladie) {
         this.maladie = maladie;
     }
+
+    public void ajouterCycle (Cycle cycle){
+        cycles.add(cycle);
+
+    }
+
+ /*    private List<Individu> genererPopulation(int taille) {
+        List<Individu> population = new ArrayList<>();
+        Random random = new Random();
+
+        for (int i = 0; i < taille; i++) {
+            int x = random.nextInt(10);
+            int y = random.nextInt(10);
+            Etat etat = (random.nextDouble() < 0.2) ? Etat.INCUBATION : Etat.SAIN;
+            population.add(new Individu(x, y, etat));
+        }
+        return population;
+    }
+
+    public void lancerSimulation() {
+        for (int cycle = 1; cycle <= cycles; cycle++) {
+            System.out.println("Cycle " + cycle);
+            miseAJourEtats();
+            affichageStatistiques();
+        }
+
+    
+    }
+     private void miseAJourEtats() {
+        Random random = new Random();
+        for (Individu individu : population) {
+            if (individu.etat == Etat.INCUBATION) {
+                individu.cyclesResistant++;
+                if (individu.cyclesResistant >= virus.periodeIncubation) {
+                    individu.etat = Etat.CONTAGIEUX;
+                }
+            } else if (individu.etat == Etat.CONTAGIEUX) {
+                for (Individu autre : population) {
+                    if (autre.etat == Etat.SAIN && individu.distance(autre) <= virus.dMax) {
+                        double prob = virus.probabiliteTransmission(individu.distance(autre));
+                        if (random.nextDouble() < prob) {
+                            autre.etat = Etat.INCUBATION;
+                        }
+                    }
+                }
+                if (random.nextDouble() < virus.probDeces) {
+                    individu.etat = Etat.DECEDE;
+                } else if (random.nextDouble() < virus.probGuerison) {
+                    individu.etat = Etat.GUERI;
+                    individu.cyclesResistant = 0;
+                }
+            } else if (individu.etat == Etat.GUERI) {
+                individu.cyclesResistant++;
+                if (individu.cyclesResistant > 5) {
+                    individu.etat = Etat.SAIN;
+                }
+            }
+        }
+    }*/
     public void afficher_historique(){
         
     }
-    
 }

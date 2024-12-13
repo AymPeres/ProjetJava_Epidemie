@@ -1,3 +1,3 @@
-public class enum EtatPopulation {
+public enum EtatPopulation {
     SAINE , CONTAGIEUSE , GUERIE , CONTAMINEE
 }
