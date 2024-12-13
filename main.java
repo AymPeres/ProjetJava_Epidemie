@@ -9,7 +9,7 @@ public class Main {
 
         Maladie maladie = new Maladie("COVID");
         Variant variant = new Variant("COVID19",0.4f,0.1f,10,0.5f,0.9f,1f,0.8f);
-        epidemie.lancerSimulation();
+       // epidemie.lancerSimulation();
         System.out.println(epidemie.toString());
     }
 }

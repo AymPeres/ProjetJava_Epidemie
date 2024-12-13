@@ -14,15 +14,14 @@ public class Variant {
 
  
 
-    public Variant(String nom, int pIncubation, float tauxTransmissionInitial, float distanceMaxTransmission,
-            float pGuerison, float pDeces, float distanceMax, float pneutre , float psensible , float presistante) {
+    public Variant(String nom, int pIncubation, float tauxTransmissionInitial, int distanceMaxTransmission,
+            float pGuerison, float pDeces, float pneutre , float psensible , float presistante) {
         this.nom = nom;
         this.pIncubation = pIncubation;
         this.tauxTransmissionInitial = tauxTransmissionInitial;
         this.distanceMaxTransmission = distanceMaxTransmission;
         this.pGuerison = pGuerison;
         this.pDeces = pDeces;
-        this.distanceMax = distanceMax;
         this.listeFacteursTransmission = new EnumMap<>(TypePersonne.class);
         if(pneutre<0 || pneutre>1 || psensible<0 || psensible>1 || presistante<0 || presistante>1){
             throw new IllegalArgumentException("Les probabilités nombre doivent être entre 0 et 1.");
@@ -30,8 +29,6 @@ public class Variant {
         listeFacteursTransmission.put(TypePersonne.SENSIBLE, psensible);
         listeFacteursTransmission.put(TypePersonne.NEUTRE , pneutre);
         listeFacteursTransmission.put(TypePersonne.RESISTANTE, presistante);
-
-
     }
 
 
@@ -95,7 +92,7 @@ public class Variant {
 
 
 
-    public void setDistanceMaxTransmission(float distanceMaxTransmission) {
+    public void setDistanceMaxTransmission(int distanceMaxTransmission) {
         this.distanceMaxTransmission = distanceMaxTransmission;
     }
 
@@ -121,18 +118,6 @@ public class Variant {
 
     public void setpDeces(float pDeces) {
         this.pDeces = pDeces;
-    }
-
-
-
-    public float getDistanceMax() {
-        return distanceMax;
-    }
-
-
-
-    public void setDistanceMax(float distanceMax) {
-        this.distanceMax = distanceMax;
     }
 
 

@@ -13,6 +13,9 @@ public class Epidemie {
         this.cycles = cycles;
     }
 
+    public Epidemie() {
+    }
+
     public Population getPopulation() {
         return population;
     }
@@ -33,7 +36,7 @@ public class Epidemie {
         cycles.add(cycle);
 
     }
-    public void lancerSimulation() {
+  /*   public void lancerSimulation() {
         for (int cycle = 1; cycle <= cycles; cycle++) {
             System.out.println("Cycle " + cycle);
             miseAJourEtats();
@@ -42,7 +45,7 @@ public class Epidemie {
 
     
     }
-
+*/
 
  /*    
 

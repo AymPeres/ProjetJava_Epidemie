@@ -131,7 +131,7 @@ public class Personne {
 
     }
 
-    public double deplacer() {
+    public void deplacer() {
 
     }
 
@@ -141,13 +141,13 @@ public class Personne {
 
     public double PContagion(Personne p) {
         double distance = distanceEuclidienneP2(p);
-        if(comportement==TypeComportement.AGRESSIF){
+        if(comportement==TypeComportement.RESPONSABLE){
             distance=distance*2;
         }
-        if (distance > population.getEpidemie().getMaladie().getDistanceMax()) {
+        if (distance > population.getEpidemie().getMaladie().getDistanceMaxTransmission()) {
             return 0;
         }
-        return Math.max(0, population.getEpidemie().getMaladie().getTauxTransmissionInitial() * (1 - (distance / population.getEpidemie().getMaladie().getDistanceMax())));
+        return Math.max(0, population.getEpidemie().getMaladie().getTauxTransmissionInitial() * (1 - (distance / population.getEpidemie().getMaladie().getDistanceMaxTransmission())));
     }
 
     public double PTransmissionFinale(Personne p){

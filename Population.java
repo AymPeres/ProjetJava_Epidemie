@@ -4,6 +4,7 @@ public class Population {
 
     private Personne[] individus;
     private int nbPersonnes;
+    private Epidemie epidemie;
 
 
     public Population(int nbPersonnes, int longueur, int largeur) {
@@ -63,17 +64,31 @@ public class Population {
     }
 
     public void mettreAJourPopulation() {
-        for (Personne individu : individus) {
-            individu.evaluerEtat();
-        }
+       
     }
 
-    public List<Personne> getIndividus() {
+    public Personne[] getIndividus() {
         return individus;
     }
 
-    public void setIndividus(List<Personne> individus) {
+    public void setIndividus(Personne[] individus) {
         this.individus = individus;
+    }
+
+    public int getNbPersonnes() {
+        return nbPersonnes;
+    }
+
+    public void setNbPersonnes(int nbPersonnes) {
+        this.nbPersonnes = nbPersonnes;
+    }
+
+    public Epidemie getEpidemie() {
+        return epidemie;
+    }
+
+    public void setEpidemie(Epidemie epidemie) {
+        this.epidemie = epidemie;
     }
 
 
