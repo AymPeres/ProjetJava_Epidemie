@@ -1,34 +1,55 @@
 public class Personne {
-    private String nom;
     private EtatPersonne etat;
     private int facteurTransmission;
     private int dResistance;
     private Placement placement;
     private TypeComportement comportement;
     private Population population;
+    private boolean vaccine;
+    private TypePersonne typePersonne;
+    private int compteurTypeComportement;
 
+    
   
 
-    public Personne(String nom, EtatPersonne etat, int facteurTransmission, int dResistance, Placement placement,
+    public Personne( EtatPersonne etat, int facteurTransmission, int dResistance, Placement placement,
             TypeComportement comportement) {
-        this.nom = nom;
         this.etat = etat;
         this.facteurTransmission = facteurTransmission;
         this.dResistance = dResistance;
         this.placement = placement;
         this.comportement = comportement;
+        this.vaccine = false;
     }
 
 
 
-    public String getNom() {
-        return nom;
+    public Personne(EtatPersonne etat) {
+        this.etat = etat;
     }
 
 
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public TypePersonne getTypePersonne() {
+        return typePersonne;
+    }
+
+
+
+    public void setTypePersonne(TypePersonne typePersonne) {
+        this.typePersonne = typePersonne;
+    }
+
+
+
+    public int getCompteurTypeComportement() {
+        return compteurTypeComportement;
+    }
+
+
+
+    public void setCompteurTypeComportement(int compteurTypeComportement) {
+        this.compteurTypeComportement = compteurTypeComportement;
     }
 
 
@@ -75,8 +96,9 @@ public class Personne {
 
 
 
-    public void setPlacement(Placement placement) {
-        this.placement = placement;
+    public void setPlacement(int x, int y) {
+        this.placement.setX(x);
+        this.placement.setX(y);
     }
 
 

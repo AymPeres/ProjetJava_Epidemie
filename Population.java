@@ -2,22 +2,49 @@ import java.util.*;
 
 public class Population {
 
-    private List<Personne> individus;
-    private Epidemie epidemie ;
-
-    
+    private Personne[] individus;
+    private int nbPersonnes;
 
 
-    public Population(List<Personne> individus, Epidemie epidemie) {
-        this.individus = individus;
-        this.epidemie = epidemie;
+    public Population(int nbPersonnes, int longueur, int largeur) {
+        individus = new Personne[nbPersonnes];
+        Random random = new Random();
+
+        for (int i = 0; i < nbPersonnes; i++) {
+            individus[i] = new Personne(EtatPersonne.SAIN);
+            individus[i].setPlacement(random.nextInt(largeur),random.nextInt(longueur));
+        }
+
     }
 
     public void ajouterIndividu(Personne individu) {
-        this.individus.add(individu);
+        this.individus[individus.length+1] = individu;
     }
 
-    public List<Personne> obtenirIndividus() {
+    public void attribuer2Etats(int pourcentage,EtatPersonne etat1,EtatPersonne etat2){
+        for(int i = 0; i < ((nbPersonnes*pourcentage)/100); i++){
+            individus[i].setEtat(etat1);
+        }
+        for(int i =((nbPersonnes*pourcentage)/100); i < nbPersonnes; i++){
+            individus[i].setEtat(etat2);
+        }
+    }
+
+    public void attribuerTypesPersonnes(int pourcentage,TypePersonne type){
+        for(int i = 0; i < ((nbPersonnes*pourcentage)/100); i++){
+            individus[i].setTypePersonne(type);
+        }
+    }
+
+    public void attribuerComportements(int pourcentage, TypeComportement type,int n){
+        for(int i = 0; i < ((nbPersonnes*pourcentage)/100); i++){
+            individus[i].setComportement(type);
+            individus[i].setCompteurTypeComportement(n);
+
+        }
+    }
+
+    public Personne[] obtenirIndividus() {
         return individus;
     }
 
@@ -49,12 +76,6 @@ public class Population {
         this.individus = individus;
     }
 
-    public Epidemie getEpidemie() {
-        return epidemie;
-    }
 
-    public void setEpidemie(Epidemie epidemie) {
-        this.epidemie = epidemie;
-    }
 }
 

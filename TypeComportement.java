@@ -1,3 +1,3 @@
 public enum TypeComportement{
-    RESPONSABLE , PROTECTION , NORMALE
+    RESPONSABLE , PROTECTION, NORMALE
 }

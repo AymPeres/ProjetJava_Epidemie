@@ -2,12 +2,12 @@ import java.util.*;
 
 public class Epidemie {
     private Population population;
-    private Maladie maladie;
+    private Variant maladie;
     private ArrayList<Cycle> cycles ;
     
 
   
-    public Epidemie(Population population, Maladie maladie, ArrayList<Cycle> cycles) {
+    public Epidemie(Population population, Variant maladie, ArrayList<Cycle> cycles) {
         this.population = population;
         this.maladie = maladie;
         this.cycles = cycles;
@@ -21,11 +21,11 @@ public class Epidemie {
         this.population = population;
     }
 
-    public Maladie getMaladie() {
+    public Variant getMaladie() {
         return maladie;
     }
 
-    public void setMaladie(Maladie maladie) {
+    public void setMaladie(Variant maladie) {
         this.maladie = maladie;
     }
 
@@ -33,20 +33,6 @@ public class Epidemie {
         cycles.add(cycle);
 
     }
-
- /*    private List<Individu> genererPopulation(int taille) {
-        List<Individu> population = new ArrayList<>();
-        Random random = new Random();
-
-        for (int i = 0; i < taille; i++) {
-            int x = random.nextInt(10);
-            int y = random.nextInt(10);
-            Etat etat = (random.nextDouble() < 0.2) ? Etat.INCUBATION : Etat.SAIN;
-            population.add(new Individu(x, y, etat));
-        }
-        return population;
-    }
-
     public void lancerSimulation() {
         for (int cycle = 1; cycle <= cycles; cycle++) {
             System.out.println("Cycle " + cycle);
@@ -56,6 +42,11 @@ public class Epidemie {
 
     
     }
+
+
+ /*    
+
+   
      private void miseAJourEtats() {
         Random random = new Random();
         for (Individu individu : population) {
