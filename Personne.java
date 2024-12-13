@@ -119,6 +119,9 @@ public class Personne {
 
     public double PContagion(Personne p) {
         double distance = distanceEuclidienneP2(p);
+        if(comportement==TypeComportement.AGRESSIF){
+            distance=distance*2;
+        }
         if (distance > population.getEpidemie().getMaladie().getDistanceMax()) {
             return 0;
         }
@@ -129,3 +132,4 @@ public class Personne {
         return PContagion(p)*facteurTransmission;
     }
 }
+
